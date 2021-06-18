@@ -1,4 +1,4 @@
-FROM ubuntu:20.04 as build
+FROM ubuntu:groovy-20210614 as build
 
 # LABEL Author="Klaus Greff <klausg@google.com>"
 # LABEL Title="Kubruntu"
@@ -85,7 +85,7 @@ RUN cd blender && patch -p1 < openmp_static_patch.txt
 RUN cd blender && make -j8 bpy
 
 
-FROM ubuntu:20.04
+FROM ubuntu:groovy-20210614
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LC_ALL C.UTF-8
